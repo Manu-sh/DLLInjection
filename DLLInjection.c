@@ -74,7 +74,7 @@ bool dllInject(DWORD pid, const char *dllpath) {
 
 	if (!(handle = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid))) {
 		SETGLOBERR("OpenProcess()");
-		goto exit;
+		goto exit; // ok not necessary, old code, i'm lazy
 	}
 
 	if (!(LoadLibraryAddr = GetProcAddress(GetModuleHandleA("Kernel32.dll"), "LoadLibraryA"))) {
