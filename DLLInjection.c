@@ -11,12 +11,12 @@
 #include <stdbool.h>
 #include <stdarg.h>
 
+
 #define MSG(MSG,TITLE) (MessageBoxA(NULL, MSG, TITLE, MB_OK|MB_ICONINFORMATION))
 #define MSGE(MSG) (MessageBoxA(NULL, MSG, NULL, MB_OK|MB_ICONERROR))
 #define SETGLOBERR(FORMAT, ...) do{memset(err, 0, sizeof(err)); sprintf(err, FORMAT, ##__VA_ARGS__);}while(0)
 #define DLL_INJECT_WC "DLL Injection"
 #define s_free(PTR) do{free(PTR); PTR = NULL;}while(0)
-#define g_free() do{ s_free(dll);}while(0)
 #define MAX_PNAME 250
 #define MAX_ERR 500
 
