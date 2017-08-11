@@ -16,7 +16,7 @@
 #define SETGLOBERR(FORMAT, ...) do{memset(err, 0, sizeof(err)); sprintf(err, FORMAT, ##__VA_ARGS__);}while(0)
 #define DLL_INJECT_WC "DLL Injection"
 #define s_free(PTR) do{free(PTR); PTR = NULL;}while(0)
-#define g_free() do{if (dll) s_free(dll);}while(0)
+#define g_free() do{ s_free(dll);}while(0)
 #define MAX_PNAME 250
 #define MAX_ERR 500
 
